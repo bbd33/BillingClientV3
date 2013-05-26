@@ -49,11 +49,11 @@ namespace BillingClientV3
             _frmMode = frmMode;
             
             if (_frmMode == FormMode.QueryServerInformation)
-                _messageInfo = "Query Server Information";
+                _messageInfo = "Getting Server Information";
             else if (_frmMode == FormMode.QueryClientInformation)
-                _messageInfo = "Query Client Information";
+                _messageInfo = "Getting Client Information";
             else if (_frmMode == FormMode.QuerySessionInformation)
-                _messageInfo = "Query Session Information";
+                _messageInfo = "Getting Session Information";
         }
         private void btnToggleShowParentForm_Click(object sender, EventArgs e)
         {
@@ -135,35 +135,54 @@ namespace BillingClientV3
             }
             else if (_frmMode == FormMode.QueryClientInformation)
             {
-                resource = "";
+                resource = "ClientInformation";
+                ClientInformation clientInfo = null;
+                RestController<ClientInformation> rsc;
+                rsc = new RestController<ClientInformation>(serverBase, resource, resourceSuffix);
+
+                try
+                {
+                    clientInfo = rsc.GetData();
+                    _launcher.SetClientInfo(clientInfo);
+                    _commandExecuteInProgress = false;
+                    Hide();
+                }
+                catch (Exception exp)
+                {
+                    DialogResult result;
+                    result = MessageBox.Show(exp.Message, "Error", MessageBoxButtons.RetryCancel);
+                    //if (result == DialogResult.Retry)
+                    //{
+                    _commandExecuteInProgress = false;
+                    _commandRetry++;
+                    //}
+                }
             }
             else if (_frmMode == FormMode.QuerySessionInformation)
             {
-                resource = "";
-            }
+                resource = "SessionInformation";
+                SessionInformation sessionInfo = null;
+                RestController<SessionInformation> rss;
+                rss = new RestController<SessionInformation>(serverBase, resource, resourceSuffix);
 
-
-
-            /*
-            restClient.EndPoint = serverBase + resource + resourceSuffix;
-            string JSON = "";
-            try
-            {
-                JSON =  restClient.MakeRequest();
-            }
-            catch (Exception exp)
-            {
-                DialogResult result;
-                result = MessageBox.Show(exp.Message, "Error", MessageBoxButtons.RetryCancel);
-                if (result == DialogResult.Retry)
+                try
                 {
+                    sessionInfo = rss.GetData();
+                    _launcher.SetSessionInfo(sessionInfo);
                     _commandExecuteInProgress = false;
-                    _commandRetry++;
+                    Hide();
+                }
+                catch (Exception exp)
+                {
+                    DialogResult result;
+                    //result = MessageBox.Show(exp.Message, "Error", MessageBoxButtons.RetryCancel);
+                    //if (result == DialogResult.Retry)
+                    //{
+                    //_commandExecuteInProgress = false;
+                    //_commandRetry++;
+                    //}
                 }
             }
-
-            Entities ServerInformation; 
-            */
 
         }
         private void FormInfo_VisibleChanged(object sender, EventArgs e)

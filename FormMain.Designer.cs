@@ -53,6 +53,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BackgroundImage = global::BillingClientV3.Properties.Resources.welcome_1440_900_5390;
             this.ClientSize = new System.Drawing.Size(460, 270);
             this.Controls.Add(this.lblInfo);
             this.Name = "FormMain";

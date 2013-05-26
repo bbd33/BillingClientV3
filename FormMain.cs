@@ -12,6 +12,9 @@ namespace BillingClientV3
     public partial class FormMain : Form
     {
         private ServerInformation _serverInformation;
+        private ClientInformation _clientInformation;
+        private SessionInformation _sessionInformation;
+
         private bool _firstInit;
 
         public FormMain()
@@ -21,6 +24,14 @@ namespace BillingClientV3
         public void SetServerInfo(ServerInformation serverInfo)
         {
             _serverInformation = serverInfo;
+        }
+        public void SetClientInfo(ClientInformation clientInfo)
+        {
+            _clientInformation = clientInfo;
+        }
+        public void SetSessionInfo(SessionInformation sessionInfo)
+        {
+            _sessionInformation = sessionInfo;
         }
         private void FormMain_VisibleChanged(object sender, EventArgs e)
         {
@@ -70,6 +81,15 @@ namespace BillingClientV3
 
             frmInfo.SetMode(FormInfo.FormMode.QueryClientInformation);
             frmInfo.ShowDialog();
+
+            tray.BalloonTipText = "This computer registered as " + _clientInformation.Name;
+            tray.ShowBalloonTip(2000);
+
+            frmInfo.SetMode(FormInfo.FormMode.QuerySessionInformation);
+            frmInfo.ShowDialog();
+
+            tray.BalloonTipText = "This computer session code is " + _sessionInformation.Code;
+            tray.ShowBalloonTip(2000);
 
             // Hide On Success
             Hide();

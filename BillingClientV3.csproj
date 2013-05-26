@@ -59,6 +59,12 @@
     <Compile Include="FormInfo.Designer.cs">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +103,20 @@
     <Compile Include="RestClient.cs" />
     <Compile Include="RestController.cs" />
     <Compile Include="ServerInformation.cs" />
+    <Compile Include="ClientInformation.cs" />
+    <Compile Include="SessionInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lighthouse0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tongue-stuck-on-lamppost-wallpapers_31767_1366x768.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18509_1280x1024-wallpaper-cb1275424146.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome-1440-900-5390.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

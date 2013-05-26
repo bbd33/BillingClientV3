@@ -45,6 +45,7 @@
             this.btnToggleShowParentForm.TabIndex = 0;
             this.btnToggleShowParentForm.Text = "Toggle Hide/Show Parent";
             this.btnToggleShowParentForm.UseVisualStyleBackColor = true;
+            this.btnToggleShowParentForm.Visible = false;
             this.btnToggleShowParentForm.Click += new System.EventHandler(this.btnToggleShowParentForm_Click);
             // 
             // lblInfoCaption
@@ -55,10 +56,12 @@
             this.lblInfoCaption.Size = new System.Drawing.Size(34, 13);
             this.lblInfoCaption.TabIndex = 1;
             this.lblInfoCaption.Text = "Info : ";
+            this.lblInfoCaption.Visible = false;
             // 
             // lblInfoText
             // 
             this.lblInfoText.AutoSize = true;
+            this.lblInfoText.ForeColor = System.Drawing.Color.Snow;
             this.lblInfoText.Location = new System.Drawing.Point(44, 11);
             this.lblInfoText.Name = "lblInfoText";
             this.lblInfoText.Size = new System.Drawing.Size(16, 13);
@@ -72,7 +75,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.lblInfoCaption);
             this.panel1.Controls.Add(this.btnToggleShowParentForm);
             this.panel1.Controls.Add(this.lblInfoText);
@@ -85,11 +88,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(427, 61);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInfo";
+            this.Opacity = 0.6;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInfo";
             this.VisibleChanged += new System.EventHandler(this.FormInfo_VisibleChanged);

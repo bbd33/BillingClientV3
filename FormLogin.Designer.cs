@@ -69,6 +69,7 @@
             this.txtTimecode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimecode.Location = new System.Drawing.Point(23, 58);
+            this.txtTimecode.MaxLength = 7;
             this.txtTimecode.Name = "txtTimecode";
             this.txtTimecode.Size = new System.Drawing.Size(202, 38);
             this.txtTimecode.TabIndex = 2;

@@ -32,6 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.lblInfo = new System.Windows.Forms.Label();
             this.tray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.menuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTray.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInfo
@@ -45,9 +52,51 @@
             // 
             // tray
             // 
+            this.tray.ContextMenuStrip = this.menuTray;
             this.tray.Icon = ((System.Drawing.Icon)(resources.GetObject("tray.Icon")));
             this.tray.Text = "BillingClientV3";
             this.tray.Visible = true;
+            // 
+            // menuTray
+            // 
+            this.menuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refillToolStripMenuItem,
+            this.stopToolStripMenuItem,
+            this.chatToolStripMenuItem,
+            this.beliToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuTray.Name = "menuTray";
+            this.menuTray.Size = new System.Drawing.Size(107, 114);
+            // 
+            // refillToolStripMenuItem
+            // 
+            this.refillToolStripMenuItem.Name = "refillToolStripMenuItem";
+            this.refillToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.refillToolStripMenuItem.Text = "&Refill";
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.stopToolStripMenuItem.Text = "&Stop";
+            // 
+            // chatToolStripMenuItem
+            // 
+            this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.chatToolStripMenuItem.Text = "&Chat";
+            // 
+            // beliToolStripMenuItem
+            // 
+            this.beliToolStripMenuItem.Name = "beliToolStripMenuItem";
+            this.beliToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.beliToolStripMenuItem.Text = "&Beli";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.aboutToolStripMenuItem.Text = "&Tanya";
             // 
             // FormMain
             // 
@@ -63,6 +112,7 @@
             this.Text = "FormMain";
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);
+            this.menuTray.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,6 +122,12 @@
 
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.NotifyIcon tray;
+        private System.Windows.Forms.ContextMenuStrip menuTray;
+        private System.Windows.Forms.ToolStripMenuItem refillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem beliToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

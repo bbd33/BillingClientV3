@@ -57,6 +57,7 @@ namespace BillingClientV3
             if (Visible)
             {
                 timerClock.Enabled = true;
+                
             }
             else
             {
@@ -79,7 +80,8 @@ namespace BillingClientV3
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            BringToFront();
+            txtTimecode.Focus();
         }
 
         private void txtTimecode_KeyDown(object sender, KeyEventArgs e)

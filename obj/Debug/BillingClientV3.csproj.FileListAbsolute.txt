@@ -1,0 +1,12 @@
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\bin\Debug\BillingClientV3.exe
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\bin\Debug\BillingClientV3.pdb
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.FormMain.resources
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.Properties.Resources.resources
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.csproj.GenerateResource.Cache
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.exe
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.pdb
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.FormInfo.resources
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\bin\Debug\Newtonsoft.Json.xml

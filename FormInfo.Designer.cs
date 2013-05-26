@@ -94,8 +94,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInfo";
             this.Opacity = 0.6;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInfo";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.FormInfo_Load);
             this.VisibleChanged += new System.EventHandler(this.FormInfo_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

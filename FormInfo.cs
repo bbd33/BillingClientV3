@@ -19,6 +19,7 @@ namespace BillingClientV3
             public const int QuerySessionInformation = 3;
         }
 
+        private FormLogin _frmLogin;
         // Rest Config
 
         //RestClient _restClient = new RestClient();
@@ -42,6 +43,7 @@ namespace BillingClientV3
         {
             _dotInterval = DotInterval;
             _launcher = parentForm;
+            _frmLogin = new FormLogin(this);
             InitializeComponent();
         }
         public void SetMode(int frmMode)
@@ -174,7 +176,11 @@ namespace BillingClientV3
                 }
                 catch (Exception exp)
                 {
-                    DialogResult result;
+                    //DialogResult result;
+                    Hide();
+                    _launcher.BringToFront();
+                    _frmLogin.ShowDialog();
+                    Show();
                     //result = MessageBox.Show(exp.Message, "Error", MessageBoxButtons.RetryCancel);
                     //if (result == DialogResult.Retry)
                     //{
@@ -195,6 +201,11 @@ namespace BillingClientV3
             {
                 StopTimerDot();
             }
+        }
+
+        private void FormInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

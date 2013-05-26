@@ -54,10 +54,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.BackgroundImage = global::BillingClientV3.Properties.Resources.welcome_1440_900_5390;
+            this.BackgroundImage = global::BillingClientV3.Properties.Resources.tongue_stuck_on_lamppost_wallpapers_31767_1366x768;
             this.ClientSize = new System.Drawing.Size(460, 270);
             this.Controls.Add(this.lblInfo);
             this.Name = "FormMain";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormMain";
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);

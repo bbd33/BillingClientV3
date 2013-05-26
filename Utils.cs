@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace BillingClientV3
 {
-    public class Function
+    public class Utils
     {
         public static string Md5(string input){
             MD5 md5 = MD5.Create();

@@ -16,12 +16,21 @@ namespace BillingClientV3
             public const int Timecode = 1;
             public const int Refill = 2;
         }
+        private int _formMode;
         private FormInfo _launcher;
         private List<string> _months,_days;
         private DateTime _now;
+        private RestController<SessionInformation> _rss;
+        private SessionInformation _ssi;
 
-        public FormLogin(FormInfo frmInfo )
+        public void SetMode( int formMode ) 
         {
+            _formMode = formMode;
+        }
+        public FormLogin(FormInfo frmInfo, RestController<SessionInformation> rss )
+        {
+            _ssi = null;
+            _rss = rss;
             _launcher = frmInfo;
             _months = new List<string>() { 
                 "",
@@ -86,7 +95,53 @@ namespace BillingClientV3
 
         private void txtTimecode_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Return && txtTimecode.Text.Length == 7) 
+            {
+                TimecodeCheckGet();
+            }
+        }
+        public SessionInformation GetSessionInfo()
+        {
+            return _ssi;
+        }
+        private void TimecodeCheckGet()
+        {
+            if (txtTimecode.Text.Length != 7)
+                return;
 
+            string resource=null; 
+            string code = Utils.Md5(txtTimecode.Text);
+
+            if(_formMode == FormMode.Timecode )
+                resource = "ClientLogin";
+
+            //SessionInformation si = null;
+            string parameter = "?data=" + code;
+            _rss.SetResource(resource);
+
+            try
+            {
+                _ssi = _rss.GetData(parameter);
+                Hide();
+               
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show(null,"Kode tidak berlaku","Maaf,");
+            }
+        }
+
+        private void btnOke_Click(object sender, EventArgs e)
+        {
+            TimecodeCheckGet();
+        }
+
+        private void ckShowTc_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (ckShowTc.Checked)
+                txtTimecode.UseSystemPasswordChar = false;
+            else
+                txtTimecode.UseSystemPasswordChar = true;
         }
     }
 }

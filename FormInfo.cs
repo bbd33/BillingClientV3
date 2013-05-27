@@ -43,7 +43,7 @@ namespace BillingClientV3
         {
             _dotInterval = DotInterval;
             _launcher = parentForm;
-            _frmLogin = new FormLogin(this);
+            //_frmLogin = new FormLogin(this);
             InitializeComponent();
         }
         public void SetMode(int frmMode)
@@ -178,13 +178,20 @@ namespace BillingClientV3
                 {
                     //DialogResult result;
                     Hide();
+                    //string resource = "ClientLogin"
+                    //RestController<SessionInformation> rss;
+                    //rss = RestController<SessionInformation>(serverBase, resource, resourceSuffix);
                     _launcher.BringToFront();
+                    _frmLogin = new FormLogin(this, rss);
+                    _frmLogin.SetMode(FormLogin.FormMode.Timecode);
                     _frmLogin.ShowDialog();
-                    Show();
+                    sessionInfo = _frmLogin.GetSessionInfo();
+                    _launcher.SetSessionInfo(sessionInfo);
+                    //Show();
                     //result = MessageBox.Show(exp.Message, "Error", MessageBoxButtons.RetryCancel);
                     //if (result == DialogResult.Retry)
                     //{
-                    //_commandExecuteInProgress = false;
+                    _commandExecuteInProgress = false;
                     //_commandRetry++;
                     //}
                 }

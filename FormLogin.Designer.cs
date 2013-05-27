@@ -38,6 +38,7 @@
             this.lblClock = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.btnClose = new System.Windows.Forms.Button();
+            this.ckShowTc = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             this.btnOke.TabIndex = 1;
             this.btnOke.Text = "Oke";
             this.btnOke.UseVisualStyleBackColor = false;
+            this.btnOke.Click += new System.EventHandler(this.btnOke_Click);
             // 
             // txtTimecode
             // 
@@ -73,13 +75,14 @@
             this.txtTimecode.Name = "txtTimecode";
             this.txtTimecode.Size = new System.Drawing.Size(202, 38);
             this.txtTimecode.TabIndex = 2;
+            this.txtTimecode.UseSystemPasswordChar = true;
             this.txtTimecode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimecode_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 106);
+            this.label2.Location = new System.Drawing.Point(20, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 13);
             this.label2.TabIndex = 3;
@@ -88,6 +91,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.ckShowTc);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnOke);
             this.panel1.Controls.Add(this.label2);
@@ -134,6 +138,17 @@
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // ckShowTc
+            // 
+            this.ckShowTc.AutoSize = true;
+            this.ckShowTc.Location = new System.Drawing.Point(167, 117);
+            this.ckShowTc.Name = "ckShowTc";
+            this.ckShowTc.Size = new System.Drawing.Size(115, 17);
+            this.ckShowTc.TabIndex = 5;
+            this.ckShowTc.Text = " Tampilkan Kode ?";
+            this.ckShowTc.UseVisualStyleBackColor = true;
+            this.ckShowTc.CheckStateChanged += new System.EventHandler(this.ckShowTc_CheckStateChanged);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,5 +186,6 @@
         private System.Windows.Forms.Label lblClock;
         private System.Windows.Forms.Timer timerClock;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.CheckBox ckShowTc;
     }
 }

@@ -37,7 +37,8 @@
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tanyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerPush = new System.Windows.Forms.Timer(this.components);
             this.menuTray.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,11 +61,11 @@
             // menuTray
             // 
             this.menuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refillToolStripMenuItem,
             this.stopToolStripMenuItem,
+            this.refillToolStripMenuItem,
             this.chatToolStripMenuItem,
             this.beliToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.tanyaToolStripMenuItem});
             this.menuTray.Name = "menuTray";
             this.menuTray.Size = new System.Drawing.Size(107, 114);
             // 
@@ -73,12 +74,14 @@
             this.refillToolStripMenuItem.Name = "refillToolStripMenuItem";
             this.refillToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.refillToolStripMenuItem.Text = "&Refill";
+            this.refillToolStripMenuItem.Click += new System.EventHandler(this.refillToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
             this.stopToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.stopToolStripMenuItem.Text = "&Stop";
+            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // chatToolStripMenuItem
             // 
@@ -92,18 +95,22 @@
             this.beliToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.beliToolStripMenuItem.Text = "&Beli";
             // 
-            // aboutToolStripMenuItem
+            // tanyaToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.aboutToolStripMenuItem.Text = "&Tanya";
+            this.tanyaToolStripMenuItem.Name = "tanyaToolStripMenuItem";
+            this.tanyaToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.tanyaToolStripMenuItem.Text = "&Tanya";
+            // 
+            // timerPush
+            // 
+            this.timerPush.Interval = 3000;
+            this.timerPush.Tick += new System.EventHandler(this.timerPush_Tick);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AliceBlue;
-            this.BackgroundImage = global::BillingClientV3.Properties.Resources.tongue_stuck_on_lamppost_wallpapers_31767_1366x768;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(460, 270);
             this.Controls.Add(this.lblInfo);
             this.Name = "FormMain";
@@ -127,7 +134,8 @@
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beliToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tanyaToolStripMenuItem;
+        private System.Windows.Forms.Timer timerPush;
     }
 }
 

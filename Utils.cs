@@ -19,5 +19,27 @@ namespace BillingClientV3
             }
             return sb.ToString();
         }
+        public static string DurationToText(int duration)
+        {
+            int hour = duration / 3600;
+            int secondLeft = duration % 3600;
+            int minute = secondLeft / 60;
+
+            secondLeft = secondLeft % 60;
+            String durationText = "";
+
+            if (hour > 0)
+                durationText += hour.ToString() + " Jam ";
+
+            if (minute > 0)
+                durationText += " " + minute.ToString() + " Menit ";
+
+            if (secondLeft > 0)
+                durationText += " " + secondLeft.ToString() + " Detik";
+
+            return durationText;
+        }
     }
+
+    
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace BillingClientV3
 {
-    class RestController<T> 
+    public class RestController<T> 
     {
         private RestClient _client;
         private string _resource = "";
@@ -70,6 +70,11 @@ namespace BillingClientV3
         public T GetData()
         {
             _json =  _client.MakeRequest();
+            return JsonConvert.DeserializeObject<T>(_json);
+        }
+        public T GetData(string parameter)
+        {
+            _json = _client.MakeRequest(parameter);
             return JsonConvert.DeserializeObject<T>(_json);
         }
     }

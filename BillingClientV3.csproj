@@ -77,6 +77,13 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPopUp.Designer.cs">
+      <DependentUpon>FormPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageData.cs" />
     <Compile Include="PushData.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utils.cs" />
@@ -96,6 +103,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPopUp.resx">
+      <DependentUpon>FormPopUp.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -122,18 +133,10 @@
     <Compile Include="ServerInformation.cs" />
     <Compile Include="ClientInformation.cs" />
     <Compile Include="SessionInformation.cs" />
+    <Compile Include="WinApi.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Lighthouse0.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tongue-stuck-on-lamppost-wallpapers_31767_1366x768.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\18509_1280x1024-wallpaper-cb1275424146.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\welcome-1440-900-5390.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

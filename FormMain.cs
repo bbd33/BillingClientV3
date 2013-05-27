@@ -17,10 +17,13 @@ namespace BillingClientV3
         private PushData _pushData;
         private RestController<PushData> _rpd;
 
+        private FormConfirm _frmConfirm;
+
         private bool _firstInit;
 
         public FormMain()
         {
+            _frmConfirm = new FormConfirm(this);
             InitializeComponent();
         }
         public void SetServerInfo(ServerInformation serverInfo)
@@ -64,6 +67,7 @@ namespace BillingClientV3
         private void Init()
         {
             // Start main form fullscreen
+            _frmConfirm.Hide();
             DisableTimerPush();
             FullScreen();
 
@@ -76,33 +80,41 @@ namespace BillingClientV3
             frmInfo.ShowDialog();
 
             BringToFront();
+            if (_sessionInformation != null)
+            {
+                DisplayBallonTips("Connected to " + _serverInformation.CompanyName, 2000);
 
-            tray.BalloonTipText = "Connected to " + _serverInformation.CompanyName;
-            tray.ShowBalloonTip(2000);
 
+                frmInfo.SetMode(FormInfo.FormMode.QueryClientInformation);
+                frmInfo.ShowDialog();
 
-            frmInfo.SetMode(FormInfo.FormMode.QueryClientInformation);
-            frmInfo.ShowDialog();
+                if (_clientInformation != null)
+                {
+                    DisplayBallonTips("This computer registered as " + _clientInformation.Name, 2000);
 
-            tray.BalloonTipText = "This computer registered as " + _clientInformation.Name;
-            tray.ShowBalloonTip(2000);
+                    frmInfo.SetMode(FormInfo.FormMode.QuerySessionInformation);
+                    frmInfo.ShowDialog();
 
-            frmInfo.SetMode(FormInfo.FormMode.QuerySessionInformation);
-            frmInfo.ShowDialog();
+                    if (_sessionInformation != null)
+                    {
+                        DisplayBallonTips("This computer session code is " + _sessionInformation.Code, 2000);
 
-            tray.BalloonTipText = "This computer session code is " + _sessionInformation.Code;
-            tray.ShowBalloonTip(2000);
-
-            ShowTrayMenu();
-            // Hide On Success
-            Hide();
-            EnableTimerPush();
+                        ShowTrayMenu();
+                        // Hide On Success
+                        Hide();
+                        EnableTimerPush();
+                    }
+                }
+            }
         }
 
         private void ShowTrayMenu()
         {
             stopToolStripMenuItem.Visible = true;
             refillToolStripMenuItem.Visible = true;
+
+            stopToolStripMenuItem.Enabled = true;
+            refillToolStripMenuItem.Enabled = true;
         }
         
         private void HideTrayMenu()
@@ -124,7 +136,51 @@ namespace BillingClientV3
         }
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Confirm Stop
+            stopToolStripMenuItem.Enabled = false;
+            _frmConfirm.SetMode(FormConfirm.FormMode.ConfirmLogout);
+            _frmConfirm.BringToFront();
+            _frmConfirm.Show();
 
+            
+
+
+            // Jump To OnConfirm;
+
+        }
+        public void OnConfirm(bool UserPressYesButton )
+        {
+            if (_frmConfirm.GetMode() == FormConfirm.FormMode.ConfirmLogout)
+            {
+                if (UserPressYesButton)
+                {
+                    DoLogout();
+                }
+                stopToolStripMenuItem.Enabled = true;
+            }
+        }
+        private void DoLogout()
+        {
+            RestController<MessageData> rmd;
+            MessageData md = null;
+            string resource = "ClientLogout";
+            string parameter = "?data="+_sessionInformation.Code;
+
+            rmd = new RestController<MessageData>(Settings.RestController.ServerBase, resource, Settings.RestController.ResourcePrefix);
+            try
+            {
+                md = rmd.GetData(parameter);
+                _sessionInformation = null;
+                _pushData = null;
+                timerPush.Enabled = false;
+                Show();
+                FullScreen();
+
+            }
+            catch (Exception exp)
+            { 
+                DisplayBallonTips( exp.Message ,2000);
+            }
         }
 
         private void refillToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,6 +190,7 @@ namespace BillingClientV3
 
         private void timerPush_Tick(object sender, EventArgs e)
         {
+            
             if( _rpd == null )
             {
                 string resource = "TimecodePush";
@@ -149,6 +206,7 @@ namespace BillingClientV3
                 }
                 catch(Exception exp)
                 {
+
                     DisplayBallonTips( exp.Message, 2000 );   
                 }
 
@@ -159,15 +217,14 @@ namespace BillingClientV3
                 }
                 else
                 {
-                    if (_pushData.Duration == 0)
-                    { 
-                        //Logout
-                        DoLogout();
-                    }
-                    timerPush.Enabled = false;
-                    Show();
-                    FullScreen();
+                    //
+                    
                 }
+            }
+            if (_pushData.Duration <= 3)
+            { 
+                //Logout
+                DoLogout();
             }
         }
 
@@ -177,9 +234,6 @@ namespace BillingClientV3
             tray.ShowBalloonTip( timeout );
         }
 
-        private void DoLogout()
-        { 
-            
-        }
+        
     }
 }

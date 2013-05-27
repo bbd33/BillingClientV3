@@ -5,8 +5,8 @@ using System.Text;
 
 namespace BillingClientV3
 {
-    public class PushData : Entities
+    public class MessageData : Entities
     {
-        public int Duration { get; set; }
+        public string Text { get; set; }
     }
 }

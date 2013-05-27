@@ -68,6 +68,7 @@ namespace BillingClientV3
             request.Method = Method.ToString();
             request.ContentLength = 0;
             request.ContentType = ContentType;
+            request.UserAgent = Settings.RestController.UA;
 
             if (!string.IsNullOrEmpty(PostData) && Method == HttpVerb.POST)
             {

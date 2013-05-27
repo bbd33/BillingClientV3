@@ -34,11 +34,11 @@
             this.txtTimecode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ckShowTc = new System.Windows.Forms.CheckBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
-            this.btnClose = new System.Windows.Forms.Button();
-            this.ckShowTc = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,9 +54,10 @@
             // 
             // btnOke
             // 
-            this.btnOke.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnOke.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnOke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOke.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btnOke.ForeColor = System.Drawing.Color.SeaShell;
             this.btnOke.Location = new System.Drawing.Point(231, 56);
             this.btnOke.Name = "btnOke";
             this.btnOke.Size = new System.Drawing.Size(51, 40);
@@ -90,7 +91,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.ckShowTc);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnOke);
@@ -102,6 +103,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 146);
             this.panel1.TabIndex = 4;
+            // 
+            // ckShowTc
+            // 
+            this.ckShowTc.AutoSize = true;
+            this.ckShowTc.Location = new System.Drawing.Point(167, 117);
+            this.ckShowTc.Name = "ckShowTc";
+            this.ckShowTc.Size = new System.Drawing.Size(115, 17);
+            this.ckShowTc.TabIndex = 5;
+            this.ckShowTc.Text = " Tampilkan Kode ?";
+            this.ckShowTc.UseVisualStyleBackColor = true;
+            this.ckShowTc.CheckStateChanged += new System.EventHandler(this.ckShowTc_CheckStateChanged);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Location = new System.Drawing.Point(262, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 23);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "x";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblCopyright
             // 
@@ -125,35 +149,11 @@
             // 
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Location = new System.Drawing.Point(262, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 23);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "x";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Visible = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // ckShowTc
-            // 
-            this.ckShowTc.AutoSize = true;
-            this.ckShowTc.Location = new System.Drawing.Point(167, 117);
-            this.ckShowTc.Name = "ckShowTc";
-            this.ckShowTc.Size = new System.Drawing.Size(115, 17);
-            this.ckShowTc.TabIndex = 5;
-            this.ckShowTc.Text = " Tampilkan Kode ?";
-            this.ckShowTc.UseVisualStyleBackColor = true;
-            this.ckShowTc.CheckStateChanged += new System.EventHandler(this.ckShowTc_CheckStateChanged);
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(322, 195);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.lblCopyright);

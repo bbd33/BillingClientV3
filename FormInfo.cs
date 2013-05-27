@@ -105,8 +105,8 @@ namespace BillingClientV3
             // Temporary sould replaced by config
             /*RestClient restClient = new RestClient();
             */
-            string serverBase = "http://10.0.0.13/damarnet/api/";
-            string resource = "", resourceSuffix = "/format/json";
+            string serverBase = Settings.RestController.ServerBase;//"http://10.0.0.13/damarnet/api/";
+            string resource = "", resourceSuffix = Settings.RestController.ResourcePrefix;
             
             if (_frmMode == FormMode.QueryServerInformation)
             {

@@ -59,33 +59,5 @@ namespace BillingClientV3.Properties {
                 resourceCulture = value;
             }
         }
-        
-        internal static System.Drawing.Bitmap _18509_1280x1024_wallpaper_cb1275424146 {
-            get {
-                object obj = ResourceManager.GetObject("18509_1280x1024-wallpaper-cb1275424146", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Lighthouse0 {
-            get {
-                object obj = ResourceManager.GetObject("Lighthouse0", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap tongue_stuck_on_lamppost_wallpapers_31767_1366x768 {
-            get {
-                object obj = ResourceManager.GetObject("tongue-stuck-on-lamppost-wallpapers_31767_1366x768", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap welcome_1440_900_5390 {
-            get {
-                object obj = ResourceManager.GetObject("welcome-1440-900-5390", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

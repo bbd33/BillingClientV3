@@ -103,7 +103,7 @@
             // 
             // timerPush
             // 
-            this.timerPush.Interval = 3000;
+            this.timerPush.Interval = 5000;
             this.timerPush.Tick += new System.EventHandler(this.timerPush_Tick);
             // 
             // FormMain
@@ -117,6 +117,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormMain";
+            this.TopMost = true;
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);
             this.menuTray.ResumeLayout(false);

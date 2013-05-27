@@ -16,13 +16,14 @@ namespace BillingClientV3
         private SessionInformation _sessionInformation;
         private PushData _pushData;
         private RestController<PushData> _rpd;
-
+        private FormPopUp _frmPopUp;
         private FormConfirm _frmConfirm;
 
         private bool _firstInit;
 
         public FormMain()
         {
+            _frmPopUp = new FormPopUp(this);    
             _frmConfirm = new FormConfirm(this);
             InitializeComponent();
         }
@@ -70,7 +71,7 @@ namespace BillingClientV3
             _frmConfirm.Hide();
             DisableTimerPush();
             FullScreen();
-
+            HidePopUp();
             //Hide tray menu
             HideTrayMenu();
 
@@ -80,34 +81,36 @@ namespace BillingClientV3
             frmInfo.ShowDialog();
 
             BringToFront();
-            if (_sessionInformation != null)
-            {
-                DisplayBallonTips("Connected to " + _serverInformation.CompanyName, 2000);
+
+            DisplayBallonTips("Connected to " + _serverInformation.CompanyName,2000);
 
 
-                frmInfo.SetMode(FormInfo.FormMode.QueryClientInformation);
-                frmInfo.ShowDialog();
+            frmInfo.SetMode(FormInfo.FormMode.QueryClientInformation);
+            frmInfo.ShowDialog();
 
-                if (_clientInformation != null)
-                {
-                    DisplayBallonTips("This computer registered as " + _clientInformation.Name, 2000);
+            DisplayBallonTips( "This computer registered as " + _clientInformation.Name,2000);
 
-                    frmInfo.SetMode(FormInfo.FormMode.QuerySessionInformation);
-                    frmInfo.ShowDialog();
+            frmInfo.SetMode(FormInfo.FormMode.QuerySessionInformation);
+            frmInfo.ShowDialog();
 
-                    if (_sessionInformation != null)
-                    {
-                        DisplayBallonTips("This computer session code is " + _sessionInformation.Code, 2000);
-
-                        ShowTrayMenu();
-                        // Hide On Success
-                        Hide();
-                        EnableTimerPush();
-                    }
-                }
+            if( _sessionInformation != null ){
+                DisplayBallonTips( "This computer session code is " + _sessionInformation.Code, 2000);
+                ShowPopUp();
             }
+            ShowTrayMenu();
+            // Hide On Success
+            Hide();
+            EnableTimerPush();
         }
 
+        private void ShowPopUp()
+        {
+            _frmPopUp.Show();
+        }
+        private void HidePopUp()
+        {
+            _frmPopUp.Hide();
+        }
         private void ShowTrayMenu()
         {
             stopToolStripMenuItem.Visible = true;

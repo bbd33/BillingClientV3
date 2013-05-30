@@ -139,11 +139,11 @@
             this.txtNick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNick.Location = new System.Drawing.Point(247, 73);
-            this.txtNick.MaxLength = 7;
+            this.txtNick.MaxLength = 20;
             this.txtNick.Name = "txtNick";
             this.txtNick.Size = new System.Drawing.Size(355, 38);
             this.txtNick.TabIndex = 7;
-            this.txtNick.Text = "Gayus Tambunan";
+            this.txtNick.Text = "12345678901234567890";
             // 
             // lblNama
             // 

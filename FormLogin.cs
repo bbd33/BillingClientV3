@@ -113,8 +113,8 @@ namespace BillingClientV3
         }
         private void TimecodeCheckGet()
         {
-            if (txtTimecode.Text.Length != 7)
-                return;
+            if (txtTimecode.Text.Length != 7 && txtNick.Text.Length < 1 )
+                MessageBox.Show(null,"Mohon lengkapi data Anda", "Maaf");
 
             string resource=null; 
             string code = Utils.Md5(txtTimecode.Text);

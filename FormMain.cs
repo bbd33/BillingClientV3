@@ -220,10 +220,12 @@ namespace BillingClientV3
             _sessionInformation = null;
             _pushData = null;
             timerPush.Enabled = false;
+            _frmConfirm.Hide();
+            ProcessMonitor.KillAll();
             Show();
             FullScreen();
 
-            ProcessMonitor.KillAll();
+            
         }
 
         private void refillToolStripMenuItem_Click(object sender, EventArgs e)

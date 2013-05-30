@@ -38,16 +38,16 @@ namespace BillingClientV3
             ProcessMonitor procMon = new ProcessMonitor(Settings.ProcessMonitor.ProcessOwner);
             procMon.Watch();
             List<string> dontKillThisApps = new List<string>(Regex.Split(Settings.ProcessMonitor.DontKillThisApp, ","));
-
+            List<string> processToDelete = new List<string>();
             for (int i = 0; i < procMon._processList.Count ;i++)
             {
                 string processName = procMon._processList[i];
-                if( dontKillThisApps.Any(item => item.Contains(processName)) )
+                if( !dontKillThisApps.Any(item => item.Contains(processName)) )
                 {
-                    procMon._processList.RemoveAt(i);
+                    processToDelete.Add(processName);//procMon._processList.RemoveAt(i);
                 }
             }
-            Process.GetProcesses().Where(p => procMon._processList.Contains(p.ProcessName)).ToList().ForEach(y => y.Kill());
+            Process.GetProcesses().Where(p => processToDelete.Contains(p.ProcessName)).ToList().ForEach(y => y.Kill());
         }
 
         public void AddProcess(ManagementObject mo)
@@ -60,6 +60,7 @@ namespace BillingClientV3
             
             //cbPsLists.Items.Add(processName + " " + ProcessOwner);
            // string s;
+            processName = processName.Replace(".exe", "");
             bool added = _processList.Any(item => item.Contains(processName));
             if (!added) 
             {

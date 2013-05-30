@@ -143,6 +143,7 @@
             this.txtNick.Name = "txtNick";
             this.txtNick.Size = new System.Drawing.Size(355, 38);
             this.txtNick.TabIndex = 7;
+            this.txtNick.Text = "Gayus Tambunan";
             // 
             // lblNama
             // 

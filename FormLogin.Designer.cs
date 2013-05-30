@@ -40,7 +40,6 @@
             this.lblClock = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.lblNama = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtNick = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -88,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(244, 351);
+            this.label2.Location = new System.Drawing.Point(235, 351);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(248, 13);
             this.label2.TabIndex = 3;
@@ -112,12 +111,14 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(890, 459);
+            this.panel1.Size = new System.Drawing.Size(987, 530);
             this.panel1.TabIndex = 4;
             // 
             // ckShowTc
             // 
             this.ckShowTc.AutoSize = true;
+            this.ckShowTc.Checked = true;
+            this.ckShowTc.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckShowTc.Location = new System.Drawing.Point(487, 135);
             this.ckShowTc.Name = "ckShowTc";
             this.ckShowTc.Size = new System.Drawing.Size(115, 17);
@@ -129,8 +130,8 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Location = new System.Drawing.Point(858, 0);
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(950, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 23);
             this.btnClose.TabIndex = 4;
@@ -141,7 +142,7 @@
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
-            this.lblCopyright.Location = new System.Drawing.Point(705, 409);
+            this.lblCopyright.Location = new System.Drawing.Point(797, 504);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(173, 13);
             this.lblCopyright.TabIndex = 5;
@@ -150,7 +151,7 @@
             // lblClock
             // 
             this.lblClock.AutoSize = true;
-            this.lblClock.Location = new System.Drawing.Point(16, 409);
+            this.lblClock.Location = new System.Drawing.Point(17, 504);
             this.lblClock.Name = "lblClock";
             this.lblClock.Size = new System.Drawing.Size(111, 13);
             this.lblClock.TabIndex = 4;
@@ -170,11 +171,6 @@
             this.lblNama.TabIndex = 6;
             this.lblNama.Text = "Nama Anda :";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // txtNick
             // 
             this.txtNick.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -185,13 +181,12 @@
             this.txtNick.Name = "txtNick";
             this.txtNick.Size = new System.Drawing.Size(355, 38);
             this.txtNick.TabIndex = 7;
-            this.txtNick.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(244, 325);
+            this.label3.Location = new System.Drawing.Point(236, 324);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 13);
             this.label3.TabIndex = 8;
@@ -201,7 +196,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(244, 375);
+            this.label4.Location = new System.Drawing.Point(235, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 13);
             this.label4.TabIndex = 9;
@@ -212,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(953, 443);
+            this.ClientSize = new System.Drawing.Size(1011, 553);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
@@ -244,7 +239,6 @@
         private System.Windows.Forms.CheckBox ckShowTc;
         private System.Windows.Forms.TextBox txtNick;
         private System.Windows.Forms.Label lblNama;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
     }

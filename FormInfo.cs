@@ -214,5 +214,9 @@ namespace BillingClientV3
         {
 
         }
+        public FormMain GetParent()
+        {
+            return _launcher;
+        }
     }
 }

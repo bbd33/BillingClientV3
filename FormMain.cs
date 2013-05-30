@@ -30,6 +30,10 @@ namespace BillingClientV3
             _frmChat = new FormChat(this);
             
         }
+        public ClientInformation GetClientInfo()
+        {
+            return _clientInformation;
+        }
         public void SetServerInfo(ServerInformation serverInfo)
         {
             _serverInformation = serverInfo;

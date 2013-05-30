@@ -79,7 +79,7 @@ namespace BillingClientV3
             _now = DateTime.Now;
             int day = (int)_now.DayOfWeek;
             string dayString = _days[day];
-            lblClock.Text = dayString + ", " + _now.Day + " " + _months[_now.Month] + " " + _now.Year + " "+_now.Hour + ":" + _now.Minute + ":" + _now.Second;
+            lblClock.Text = dayString + ", " + _now.Day + " " + _months[_now.Month] + " " + _now.Year + " "+_now.Hour.ToString("D2") + ":" + _now.Minute.ToString("D2") + ":" + _now.Second.ToString("D2");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -91,6 +91,7 @@ namespace BillingClientV3
         {
             BringToFront();
             txtTimecode.Focus();
+            txtNick.Text = _launcher.GetParent().GetClientInfo().Name;
         }
 
         private void txtTimecode_KeyDown(object sender, KeyEventArgs e)

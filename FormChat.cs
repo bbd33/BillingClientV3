@@ -32,6 +32,7 @@ namespace BillingClientV3
                 clist = rclist.GetData();
                 if(clist != null )
                 {
+
                     //for
                 }
             }

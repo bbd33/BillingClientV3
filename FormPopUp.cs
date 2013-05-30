@@ -10,7 +10,7 @@ using System.Management;
 
 namespace BillingClientV3
 {
-    public partial class FormPopUp : Form
+    public partial class FormPopUp : DraggableForm
     {
         private FormMain _launcher;
         private int _animationTime;
@@ -23,9 +23,10 @@ namespace BillingClientV3
             InitializeComponent();
             _procMon = new ProcessMonitor(Settings.ProcessMonitor.ProcessOwner);
             _launcher = frmMain;
-            Rectangle r = Screen.PrimaryScreen.WorkingArea;
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Width, Screen.PrimaryScreen.WorkingArea.Height - Height);
+            Left = 0;
+            //Rectangle r = Screen.PrimaryScreen.WorkingArea;
+            //StartPosition = FormStartPosition.Manual;
+            //Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Width, Screen.PrimaryScreen.WorkingArea.Height - Height);
         }
 
         public void Show(int AnimationTime, int Flags )
@@ -57,13 +58,19 @@ namespace BillingClientV3
 
         private void FormPopUp_VisibleChanged(object sender, EventArgs e)
         {
-            //timerProcess.Enabled = Visible;
+            Left = 0;
         }
 
         private void timerProcess_Tick(object sender, EventArgs e)
         {
+            
             //_procMon.Watch();
             //lblRunningProcess.Text = string.Format("Running Process({0})",_procMon.GetProcessCount());
+        }
+
+        private void timerLockPos_Tick(object sender, EventArgs e)
+        {
+            Top = 0;
         }
     }
 }

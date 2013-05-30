@@ -65,7 +65,7 @@
             this.btnOke.Location = new System.Drawing.Point(247, 203);
             this.btnOke.Name = "btnOke";
             this.btnOke.Size = new System.Drawing.Size(134, 57);
-            this.btnOke.TabIndex = 1;
+            this.btnOke.TabIndex = 4;
             this.btnOke.Text = "Masuk";
             this.btnOke.UseVisualStyleBackColor = false;
             this.btnOke.Click += new System.EventHandler(this.btnOke_Click);
@@ -141,9 +141,9 @@
             this.txtNick.Location = new System.Drawing.Point(247, 73);
             this.txtNick.MaxLength = 20;
             this.txtNick.Name = "txtNick";
+            this.txtNick.ReadOnly = true;
             this.txtNick.Size = new System.Drawing.Size(355, 38);
-            this.txtNick.TabIndex = 7;
-            this.txtNick.Text = "12345678901234567890";
+            this.txtNick.TabIndex = 1;
             // 
             // lblNama
             // 
@@ -172,7 +172,7 @@
             this.ckShowTc.Location = new System.Drawing.Point(487, 135);
             this.ckShowTc.Name = "ckShowTc";
             this.ckShowTc.Size = new System.Drawing.Size(115, 17);
-            this.ckShowTc.TabIndex = 5;
+            this.ckShowTc.TabIndex = 3;
             this.ckShowTc.Text = " Tampilkan Kode ?";
             this.ckShowTc.UseVisualStyleBackColor = true;
             this.ckShowTc.CheckStateChanged += new System.EventHandler(this.ckShowTc_CheckStateChanged);
@@ -196,6 +196,7 @@
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "x";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // timerClock

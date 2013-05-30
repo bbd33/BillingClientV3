@@ -49,22 +49,23 @@ namespace BillingClientV3
         {
             if (e.KeyCode == Keys.Return)
             { 
-                RestController<ChatData> rcd;
-                rcd = new RestController<ChatData>( Settings.RestController.ServerBase,
+                RestController<MessageData> rcd;
+                rcd = new RestController<MessageData>(Settings.RestController.ServerBase,
                                                     "Chat",Settings.RestController.ResourcePrefix);
-                ChatData cd = null;
+                MessageData md = null;
                 try
                 {
                     string param = "?data=" + txtChat.Text;
-                    cd = rcd.GetData(param);
-                    if(cd != null )
+                    md = rcd.GetData(param);
+                    if(md != null )
                     {
-                        AddToList(txtChat.Text);
+                        AddToList("@Nyong " + txtChat.Text);
                     }
                 }
                 catch(Exception exp){
                     AddToList(txtChat.Text + " : " +exp.Message);
                 }
+                txtChat.Text = "";
             }
         }
         public void AddToList(string txt)

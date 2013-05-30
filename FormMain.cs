@@ -19,6 +19,7 @@ namespace BillingClientV3
         private FormPopUp _frmPopUp;
         private FormConfirm _frmConfirm;
         private FormChat _frmChat;
+        private FormRefill _frmRefill;
 
         private bool _firstInit;
 
@@ -28,7 +29,7 @@ namespace BillingClientV3
             _frmPopUp = new FormPopUp(this);    
             _frmConfirm = new FormConfirm(this);
             _frmChat = new FormChat(this);
-            
+            _frmRefill = new FormRefill(this);
         }
         private void DisableTaskSwitch()
         {
@@ -53,6 +54,10 @@ namespace BillingClientV3
         public ClientInformation GetClientInfo()
         {
             return _clientInformation;
+        }
+        public SessionInformation GetSessionInfo()
+        {
+            return _sessionInformation;
         }
         public void SetServerInfo(ServerInformation serverInfo)
         {
@@ -230,7 +235,7 @@ namespace BillingClientV3
 
         private void refillToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DisplayRefill();
         }
 
         private void timerPush_Tick(object sender, EventArgs e)
@@ -307,7 +312,7 @@ namespace BillingClientV3
             { 
                 foreach (ChatData chatData in chatDatas)
                 {
-                    _frmChat.AddToList(chatData.Message);
+                    _frmChat.AddToList("     @SiGanteng " + chatData.Message);
 
                     if (!_frmChat.Visible)
                     {
@@ -331,6 +336,14 @@ namespace BillingClientV3
             _frmChat.BringToFront();
             _frmChat.Show();
     
+        }
+        private void DisplayRefill()
+        {
+            //_frmChat.Hide();
+            _frmRefill.WindowState = FormWindowState.Normal;
+            _frmRefill.BringToFront();
+            _frmRefill.Show();
+
         }
         private void chatToolStripMenuItem_Click(object sender, EventArgs e)
         {

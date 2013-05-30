@@ -57,13 +57,13 @@ namespace BillingClientV3
 
         private void FormPopUp_VisibleChanged(object sender, EventArgs e)
         {
-            timerProcess.Enabled = Visible;
+            //timerProcess.Enabled = Visible;
         }
 
         private void timerProcess_Tick(object sender, EventArgs e)
         {
-            cbPsLists.DataSource =  _procMon.Watch();
-            lblRunningProcess.Text = string.Format("Running Process({0})",_procMon.GetProcessCount());
+            //_procMon.Watch();
+            //lblRunningProcess.Text = string.Format("Running Process({0})",_procMon.GetProcessCount());
         }
     }
 }

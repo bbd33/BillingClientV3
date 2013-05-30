@@ -94,9 +94,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormChat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat Box";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FormChat_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormChat_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

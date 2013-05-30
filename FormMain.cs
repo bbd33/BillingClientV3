@@ -30,6 +30,26 @@ namespace BillingClientV3
             _frmChat = new FormChat(this);
             
         }
+        private void DisableTaskSwitch()
+        {
+            Settings.System.EnableTaskSwitch = false;
+            WinAPI.TaskSwitching_Enable_Disable(false);
+        }
+        private void EnableTaskSwitch()
+        {
+            Settings.System.EnableTaskSwitch = true;
+            WinAPI.TaskSwitching_Enable_Disable(true);
+        }
+        private void ShowTaskBar()
+        {
+            Settings.System.DisplayTaskBar = true;
+            WinAPI.Taskbar.Show();
+        }
+        private void HideTaskBar()
+        {
+            Settings.System.DisplayTaskBar = false;
+            WinAPI.Taskbar.Hide();
+        }
         public ClientInformation GetClientInfo()
         {
             return _clientInformation;
@@ -74,6 +94,9 @@ namespace BillingClientV3
         }
         private void Init()
         {
+            HideTaskBar();
+            DisableTaskSwitch();
+
             // Start main form fullscreen
             _frmConfirm.Hide();
             DisableTimerPush();
@@ -101,13 +124,16 @@ namespace BillingClientV3
             frmInfo.ShowDialog();
 
             if( _sessionInformation != null ){
-                DisplayBallonTips( "This computer session code is " + _sessionInformation.Code, 2000);
+               // DisplayBallonTips( "This computer session code is " + _sessionInformation.Code, 2000);
                 ShowPopUp();
             }
             ShowTrayMenu();
             // Hide On Success
             Hide();
             EnableTimerPush();
+
+            ShowTaskBar();
+            EnableTaskSwitch();
         }
 
         private void ShowPopUp()
@@ -122,9 +148,11 @@ namespace BillingClientV3
         {
             stopToolStripMenuItem.Visible = true;
             refillToolStripMenuItem.Visible = true;
+            chatToolStripMenuItem.Visible = true;
 
             stopToolStripMenuItem.Enabled = true;
             refillToolStripMenuItem.Enabled = true;
+            chatToolStripMenuItem.Enabled = true;
         }
         
         private void HideTrayMenu()
@@ -194,6 +222,8 @@ namespace BillingClientV3
             timerPush.Enabled = false;
             Show();
             FullScreen();
+
+            ProcessMonitor.KillAll();
         }
 
         private void refillToolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,7 +298,7 @@ namespace BillingClientV3
                 chatDatas = rcd.GetData(); 
             }
             catch(Exception exp) {
-                DisplayBallonTips(exp.Message, 1000);
+                //DisplayBallonTips(exp.Message, 1000);
             }
 
             if (chatDatas.Count > 0)
@@ -279,11 +309,30 @@ namespace BillingClientV3
 
                     if (!_frmChat.Visible)
                     {
-                        _frmChat.BringToFront();
-                        _frmChat.Show();
+                        //_frmChat.BringToFront();
+                        try
+                        {
+                            DisplayChat();
+                        }
+                        catch (Exception exp){
+                            //DisplayBallonTips(exp.Message, 1000);
+                        }
                     }
                 }
             }
+        }
+
+        private void DisplayChat()
+        { 
+            //_frmChat.Hide();
+            _frmChat.WindowState = FormWindowState.Normal;
+            _frmChat.BringToFront();
+            _frmChat.Show();
+    
+        }
+        private void chatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisplayChat();
         }  
     }
 }

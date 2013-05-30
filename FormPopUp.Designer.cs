@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
             this.cbPsLists = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timerProcess = new System.Windows.Forms.Timer(this.components);
             this.lblRunningProcess = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -42,7 +40,7 @@
             this.btnClose.BackColor = System.Drawing.Color.SteelBlue;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnClose.Location = new System.Drawing.Point(160, 1);
+            this.btnClose.Location = new System.Drawing.Point(337, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 20);
             this.btnClose.TabIndex = 0;
@@ -66,20 +64,15 @@
             this.cbPsLists.FormattingEnabled = true;
             this.cbPsLists.Location = new System.Drawing.Point(15, 38);
             this.cbPsLists.Name = "cbPsLists";
-            this.cbPsLists.Size = new System.Drawing.Size(160, 332);
+            this.cbPsLists.Size = new System.Drawing.Size(157, 332);
             this.cbPsLists.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(10, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 39);
+            this.panel1.Size = new System.Drawing.Size(339, 39);
             this.panel1.TabIndex = 3;
-            // 
-            // timerProcess
-            // 
-            this.timerProcess.Interval = 5000;
-            this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
             // 
             // lblRunningProcess
             // 
@@ -122,7 +115,6 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.ComboBox cbPsLists;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Timer timerProcess;
         private System.Windows.Forms.Label lblRunningProcess;
     }
 }

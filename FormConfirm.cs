@@ -53,7 +53,7 @@ namespace BillingClientV3
 
         private void FormConfirm_Load(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+           // WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
         }
     }

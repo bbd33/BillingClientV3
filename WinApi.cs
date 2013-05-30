@@ -55,7 +55,7 @@ namespace BillingClientV3
         public static extern int AnimateWindow(IntPtr hwand, int dwTime, int dwFlags);
 
         [DllImport("jangkrik.dll")]
-        static extern int TaskSwitching_Enable_Disable(bool bEnableDisable);
+        public static extern int TaskSwitching_Enable_Disable(bool bEnableDisable);
 
         public static class Taskbar
         {

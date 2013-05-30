@@ -69,38 +69,39 @@
             this.beliToolStripMenuItem,
             this.tanyaToolStripMenuItem});
             this.menuTray.Name = "menuTray";
-            this.menuTray.Size = new System.Drawing.Size(107, 114);
+            this.menuTray.Size = new System.Drawing.Size(153, 136);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.stopToolStripMenuItem.Text = "&Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // refillToolStripMenuItem
             // 
             this.refillToolStripMenuItem.Name = "refillToolStripMenuItem";
-            this.refillToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.refillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.refillToolStripMenuItem.Text = "&Refill";
             this.refillToolStripMenuItem.Click += new System.EventHandler(this.refillToolStripMenuItem_Click);
             // 
             // chatToolStripMenuItem
             // 
             this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
-            this.chatToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.chatToolStripMenuItem.Text = "&Chat";
+            this.chatToolStripMenuItem.Click += new System.EventHandler(this.chatToolStripMenuItem_Click);
             // 
             // beliToolStripMenuItem
             // 
             this.beliToolStripMenuItem.Name = "beliToolStripMenuItem";
-            this.beliToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.beliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beliToolStripMenuItem.Text = "&Beli";
             // 
             // tanyaToolStripMenuItem
             // 
             this.tanyaToolStripMenuItem.Name = "tanyaToolStripMenuItem";
-            this.tanyaToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.tanyaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tanyaToolStripMenuItem.Text = "&Tanya";
             // 
             // timerPush

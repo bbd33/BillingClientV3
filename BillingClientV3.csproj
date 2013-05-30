@@ -55,6 +55,12 @@
   <ItemGroup>
     <Compile Include="ChatData.cs" />
     <Compile Include="Entities.cs" />
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,10 @@
     <Compile Include="Utils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChat.resx">
       <DependentUpon>FormChat.cs</DependentUpon>
       <SubType>Designer</SubType>

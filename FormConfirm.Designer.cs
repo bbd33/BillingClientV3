@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
+            this.btnYes = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,35 +41,10 @@
             this.panel1.Controls.Add(this.btnNo);
             this.panel1.Controls.Add(this.btnYes);
             this.panel1.Controls.Add(this.lblMessage);
-            this.panel1.Location = new System.Drawing.Point(22, 307);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1323, 117);
+            this.panel1.Size = new System.Drawing.Size(1051, 432);
             this.panel1.TabIndex = 0;
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.ForeColor = System.Drawing.Color.MintCream;
-            this.lblMessage.Location = new System.Drawing.Point(25, 48);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(214, 25);
-            this.lblMessage.TabIndex = 0;
-            this.lblMessage.Text = "Apakah anda yakin ?";
-            // 
-            // btnYes
-            // 
-            this.btnYes.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYes.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnYes.Location = new System.Drawing.Point(1055, 31);
-            this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(90, 56);
-            this.btnYes.TabIndex = 2;
-            this.btnYes.Text = "Ya";
-            this.btnYes.UseVisualStyleBackColor = false;
-            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // btnNo
             // 
@@ -77,7 +52,7 @@
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnNo.Location = new System.Drawing.Point(1178, 31);
+            this.btnNo.Location = new System.Drawing.Point(917, 347);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(98, 56);
             this.btnNo.TabIndex = 1;
@@ -85,12 +60,37 @@
             this.btnNo.UseVisualStyleBackColor = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
+            // btnYes
+            // 
+            this.btnYes.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYes.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnYes.Location = new System.Drawing.Point(793, 347);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(90, 56);
+            this.btnYes.TabIndex = 2;
+            this.btnYes.Text = "Ya";
+            this.btnYes.UseVisualStyleBackColor = false;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.MintCream;
+            this.lblMessage.Location = new System.Drawing.Point(41, 49);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(214, 25);
+            this.lblMessage.TabIndex = 0;
+            this.lblMessage.Text = "Apakah anda yakin ?";
+            // 
             // FormConfirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1382, 537);
+            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.ClientSize = new System.Drawing.Size(1075, 456);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormConfirm";

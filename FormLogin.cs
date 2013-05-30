@@ -22,7 +22,7 @@ namespace BillingClientV3
         private DateTime _now;
         private RestController<SessionInformation> _rss;
         private SessionInformation _ssi;
-
+        private FormAdmin _frmAdmin;
         public void SetMode( int formMode ) 
         {
             _formMode = formMode;
@@ -58,6 +58,7 @@ namespace BillingClientV3
                 "Sabtu",
                 
             };
+            _frmAdmin = new FormAdmin();
             InitializeComponent();
         }
 
@@ -84,7 +85,12 @@ namespace BillingClientV3
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (!_frmAdmin.Visible)
+            {
+                _frmAdmin.BringToFront();
+                _frmAdmin.Show();
+            }
+            //Application.Exit();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

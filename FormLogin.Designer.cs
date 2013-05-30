@@ -34,15 +34,15 @@
             this.txtTimecode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ckShowTc = new System.Windows.Forms.CheckBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.lblCopyright = new System.Windows.Forms.Label();
-            this.lblClock = new System.Windows.Forms.Label();
-            this.timerClock = new System.Windows.Forms.Timer(this.components);
-            this.lblNama = new System.Windows.Forms.Label();
-            this.txtNick = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNick = new System.Windows.Forms.TextBox();
+            this.lblNama = new System.Windows.Forms.Label();
+            this.lblClock = new System.Windows.Forms.Label();
+            this.ckShowTc = new System.Windows.Forms.CheckBox();
+            this.lblCopyright = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +80,6 @@
             this.txtTimecode.Name = "txtTimecode";
             this.txtTimecode.Size = new System.Drawing.Size(222, 38);
             this.txtTimecode.TabIndex = 2;
-            this.txtTimecode.UseSystemPasswordChar = true;
             this.txtTimecode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimecode_KeyDown);
             // 
             // label2
@@ -114,6 +113,56 @@
             this.panel1.Size = new System.Drawing.Size(987, 530);
             this.panel1.TabIndex = 4;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(235, 375);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(188, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "- Tekan Enter atau Klik tombol Masuk.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(236, 324);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "- Masukkan nama Anda sebagai identitas.";
+            // 
+            // txtNick
+            // 
+            this.txtNick.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtNick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNick.Location = new System.Drawing.Point(247, 73);
+            this.txtNick.MaxLength = 7;
+            this.txtNick.Name = "txtNick";
+            this.txtNick.Size = new System.Drawing.Size(355, 38);
+            this.txtNick.TabIndex = 7;
+            // 
+            // lblNama
+            // 
+            this.lblNama.AutoSize = true;
+            this.lblNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNama.Location = new System.Drawing.Point(86, 73);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(136, 25);
+            this.lblNama.TabIndex = 6;
+            this.lblNama.Text = "Nama Anda :";
+            // 
+            // lblClock
+            // 
+            this.lblClock.AutoSize = true;
+            this.lblClock.Location = new System.Drawing.Point(17, 504);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(111, 13);
+            this.lblClock.TabIndex = 4;
+            this.lblClock.Text = "26 Mei 2013 18:03:00";
+            // 
             // ckShowTc
             // 
             this.ckShowTc.AutoSize = true;
@@ -127,6 +176,15 @@
             this.ckShowTc.UseVisualStyleBackColor = true;
             this.ckShowTc.CheckStateChanged += new System.EventHandler(this.ckShowTc_CheckStateChanged);
             // 
+            // lblCopyright
+            // 
+            this.lblCopyright.AutoSize = true;
+            this.lblCopyright.Location = new System.Drawing.Point(797, 504);
+            this.lblCopyright.Name = "lblCopyright";
+            this.lblCopyright.Size = new System.Drawing.Size(173, 13);
+            this.lblCopyright.TabIndex = 5;
+            this.lblCopyright.Text = "© Copyright 2013 Damar NET, Inc.";
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.DodgerBlue;
@@ -139,68 +197,9 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblCopyright
-            // 
-            this.lblCopyright.AutoSize = true;
-            this.lblCopyright.Location = new System.Drawing.Point(797, 504);
-            this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(173, 13);
-            this.lblCopyright.TabIndex = 5;
-            this.lblCopyright.Text = "© Copyright 2013 Damar NET, Inc.";
-            // 
-            // lblClock
-            // 
-            this.lblClock.AutoSize = true;
-            this.lblClock.Location = new System.Drawing.Point(17, 504);
-            this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(111, 13);
-            this.lblClock.TabIndex = 4;
-            this.lblClock.Text = "26 Mei 2013 18:03:00";
-            // 
             // timerClock
             // 
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
-            // 
-            // lblNama
-            // 
-            this.lblNama.AutoSize = true;
-            this.lblNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNama.Location = new System.Drawing.Point(86, 73);
-            this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(136, 25);
-            this.lblNama.TabIndex = 6;
-            this.lblNama.Text = "Nama Anda :";
-            // 
-            // txtNick
-            // 
-            this.txtNick.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNick.Location = new System.Drawing.Point(247, 73);
-            this.txtNick.MaxLength = 7;
-            this.txtNick.Name = "txtNick";
-            this.txtNick.Size = new System.Drawing.Size(355, 38);
-            this.txtNick.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(236, 324);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "- Masukkan nama Anda sebagai identitas.";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(235, 375);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "- Tekan Enter atau Klik tombol Masuk.";
             // 
             // FormLogin
             // 

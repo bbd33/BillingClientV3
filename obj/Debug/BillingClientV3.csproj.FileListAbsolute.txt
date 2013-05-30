@@ -14,3 +14,4 @@ C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClie
 C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.FormConfirm.resources
 C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.FormPopUp.resources
 C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.FormChat.resources
+C:\Users\bbd33\Documents\Visual Studio 2008\Projects\BillingClientV3\BillingClientV3\obj\Debug\BillingClientV3.FormAdmin.resources

@@ -15,9 +15,19 @@ namespace BillingClientV3
             public static string ResourcePrefix = "/format/json";
             public static string UA = "QmlsbGluZ0NsaWVudFYz";
         }
+        public class System 
+        {
+            public static bool EnableTaskSwitch = true;
+            public static bool DisplayTaskBar = true;
+        }
+        public class Bla 
+        {
+            
+        }
         public class ProcessMonitor
         {
             public const string ProcessOwner = "bbd33";
+            public const string DontKillThisApp = "Idle,System,audiodg,csrss,devenv,BillingClientV3,BillingClientV3.vshost,svchost,winlogon,spoolv,wininit,smsss,services,lsm,lsass,sppsvc,dwm,conhost,taskhost,wudfhost,Dreamweaver,winbox,firefox,chrome,filezilla,explorer";
         }
         public class Registry
         {

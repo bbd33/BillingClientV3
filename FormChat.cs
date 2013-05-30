@@ -71,5 +71,13 @@ namespace BillingClientV3
         {
             cbChatList.Items.Add(txt);
         }
+
+        private void FormChat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            //this.Parent = null;
+            e.Cancel = true;
+        }
+
     }
 }

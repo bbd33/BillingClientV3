@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Management;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace BillingClientV3
 {
     class ProcessMonitor
     {
+
         private List<string> _processList;
         private string _psOwner;
         public ProcessMonitor(string OwnerName)
@@ -30,6 +32,24 @@ namespace BillingClientV3
             }
         
         }
+
+        public static void KillAll()
+        {
+            ProcessMonitor procMon = new ProcessMonitor(Settings.ProcessMonitor.ProcessOwner);
+            procMon.Watch();
+            List<string> dontKillThisApps = new List<string>(Regex.Split(Settings.ProcessMonitor.DontKillThisApp, ","));
+
+            for (int i = 0; i < procMon._processList.Count ;i++)
+            {
+                string processName = procMon._processList[i];
+                if( dontKillThisApps.Any(item => item.Contains(processName)) )
+                {
+                    procMon._processList.RemoveAt(i);
+                }
+            }
+            Process.GetProcesses().Where(p => procMon._processList.Contains(p.ProcessName)).ToList().ForEach(y => y.Kill());
+        }
+
         public void AddProcess(ManagementObject mo)
         {
             string[] s = new string[2];

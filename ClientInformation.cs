@@ -12,4 +12,5 @@ namespace BillingClientV3
         public string Ip { get; set; }
         public string Group { get; set; }
     }
+    public class ClientInformations : List<ClientInformation> { }
 }

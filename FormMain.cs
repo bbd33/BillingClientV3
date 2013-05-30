@@ -18,14 +18,17 @@ namespace BillingClientV3
         private RestController<PushData> _rpd;
         private FormPopUp _frmPopUp;
         private FormConfirm _frmConfirm;
+        private FormChat _frmChat;
 
         private bool _firstInit;
 
         public FormMain()
         {
+            InitializeComponent();
             _frmPopUp = new FormPopUp(this);    
             _frmConfirm = new FormConfirm(this);
-            InitializeComponent();
+            _frmChat = new FormChat(this);
+            
         }
         public void SetServerInfo(ServerInformation serverInfo)
         {
@@ -131,10 +134,15 @@ namespace BillingClientV3
 
         private void DisableTimerPush()
         {
+            timerChat.Enabled = false;
             timerPush.Enabled = false;
+
+            // 
+            _frmChat.Hide();
         }
         private void EnableTimerPush()
         {
+            timerChat.Enabled = true;
             timerPush.Enabled = true;
         }
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,9 +152,6 @@ namespace BillingClientV3
             _frmConfirm.SetMode(FormConfirm.FormMode.ConfirmLogout);
             _frmConfirm.BringToFront();
             _frmConfirm.Show();
-
-            
-
 
             // Jump To OnConfirm;
 
@@ -173,17 +178,18 @@ namespace BillingClientV3
             try
             {
                 md = rmd.GetData(parameter);
-                _sessionInformation = null;
-                _pushData = null;
-                timerPush.Enabled = false;
-                Show();
-                FullScreen();
+                
 
             }
             catch (Exception exp)
             { 
                 DisplayBallonTips( exp.Message ,2000);
             }
+            _sessionInformation = null;
+            _pushData = null;
+            timerPush.Enabled = false;
+            Show();
+            FullScreen();
         }
 
         private void refillToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,7 +199,7 @@ namespace BillingClientV3
 
         private void timerPush_Tick(object sender, EventArgs e)
         {
-            
+            _pushData = null;
             if( _rpd == null )
             {
                 string resource = "TimecodePush";
@@ -218,13 +224,13 @@ namespace BillingClientV3
                     string DurationText = Utils.DurationToText(_pushData.Duration);
                     DisplayBallonTips(DurationText, 3000);
                 }
-                else
-                {
-                    //
-                    
-                }
+                //else if (_pushData.Duration <= 3)
+                //{ 
+                //    //Logout
+                //    DoLogout();
+                //}
             }
-            if (_pushData.Duration <= 3)
+            if ( _pushData == null )
             { 
                 //Logout
                 DoLogout();
@@ -233,10 +239,47 @@ namespace BillingClientV3
 
         private void DisplayBallonTips( string message, int timeout )
         {
+            if (_frmPopUp.Visible)
+            {
+                _frmPopUp.SetText(message);
+                return;
+            }
             tray.BalloonTipText = message + " ";
             tray.ShowBalloonTip( timeout );
         }
 
-        
+        private void timerTask_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timerChat_Tick(object sender, EventArgs e)
+        {
+            RestController<ChatDatas> rcd;
+            rcd = new RestController<ChatDatas>(Settings.RestController.ServerBase, "Chats", Settings.RestController.ResourcePrefix);
+            ChatDatas chatDatas = new ChatDatas();
+
+            try 
+            {
+                chatDatas = rcd.GetData(); 
+            }
+            catch(Exception exp) {
+                DisplayBallonTips(exp.Message, 1000);
+            }
+
+            if (chatDatas.Count > 0)
+            { 
+                foreach (ChatData chatData in chatDatas)
+                {
+                    _frmChat.AddToList(chatData.Message);
+
+                    if (!_frmChat.Visible)
+                    {
+                        _frmChat.BringToFront();
+                        _frmChat.Show();
+                    }
+                }
+            }
+        }  
     }
 }

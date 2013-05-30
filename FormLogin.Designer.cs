@@ -39,16 +39,21 @@
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.lblNama = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtNick = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 22);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(104, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 18);
+            this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Timecode :";
             // 
@@ -58,11 +63,11 @@
             this.btnOke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOke.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnOke.Location = new System.Drawing.Point(231, 56);
+            this.btnOke.Location = new System.Drawing.Point(247, 203);
             this.btnOke.Name = "btnOke";
-            this.btnOke.Size = new System.Drawing.Size(51, 40);
+            this.btnOke.Size = new System.Drawing.Size(134, 57);
             this.btnOke.TabIndex = 1;
-            this.btnOke.Text = "Oke";
+            this.btnOke.Text = "Masuk";
             this.btnOke.UseVisualStyleBackColor = false;
             this.btnOke.Click += new System.EventHandler(this.btnOke_Click);
             // 
@@ -71,10 +76,10 @@
             this.txtTimecode.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtTimecode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimecode.Location = new System.Drawing.Point(23, 58);
+            this.txtTimecode.Location = new System.Drawing.Point(247, 135);
             this.txtTimecode.MaxLength = 7;
             this.txtTimecode.Name = "txtTimecode";
-            this.txtTimecode.Size = new System.Drawing.Size(202, 38);
+            this.txtTimecode.Size = new System.Drawing.Size(222, 38);
             this.txtTimecode.TabIndex = 2;
             this.txtTimecode.UseSystemPasswordChar = true;
             this.txtTimecode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimecode_KeyDown);
@@ -83,16 +88,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 118);
+            this.label2.Location = new System.Drawing.Point(244, 351);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.Size = new System.Drawing.Size(248, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Masukkan 7 digit timecode.";
+            this.label2.Text = "- Masukkan 7 digit timecode yang sudah Anda beli.";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtNick);
+            this.panel1.Controls.Add(this.lblNama);
+            this.panel1.Controls.Add(this.lblClock);
             this.panel1.Controls.Add(this.ckShowTc);
+            this.panel1.Controls.Add(this.lblCopyright);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnOke);
             this.panel1.Controls.Add(this.label2);
@@ -101,13 +112,13 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 146);
+            this.panel1.Size = new System.Drawing.Size(890, 459);
             this.panel1.TabIndex = 4;
             // 
             // ckShowTc
             // 
             this.ckShowTc.AutoSize = true;
-            this.ckShowTc.Location = new System.Drawing.Point(167, 117);
+            this.ckShowTc.Location = new System.Drawing.Point(487, 135);
             this.ckShowTc.Name = "ckShowTc";
             this.ckShowTc.Size = new System.Drawing.Size(115, 17);
             this.ckShowTc.TabIndex = 5;
@@ -119,7 +130,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Location = new System.Drawing.Point(262, 0);
+            this.btnClose.Location = new System.Drawing.Point(858, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 23);
             this.btnClose.TabIndex = 4;
@@ -130,16 +141,16 @@
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
-            this.lblCopyright.Location = new System.Drawing.Point(183, 171);
+            this.lblCopyright.Location = new System.Drawing.Point(705, 409);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(126, 13);
+            this.lblCopyright.Size = new System.Drawing.Size(173, 13);
             this.lblCopyright.TabIndex = 5;
-            this.lblCopyright.Text = "© 2013 Damar NET, Inc.";
+            this.lblCopyright.Text = "© Copyright 2013 Damar NET, Inc.";
             // 
             // lblClock
             // 
             this.lblClock.AutoSize = true;
-            this.lblClock.Location = new System.Drawing.Point(12, 171);
+            this.lblClock.Location = new System.Drawing.Point(16, 409);
             this.lblClock.Name = "lblClock";
             this.lblClock.Size = new System.Drawing.Size(111, 13);
             this.lblClock.TabIndex = 4;
@@ -149,14 +160,59 @@
             // 
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
+            // lblNama
+            // 
+            this.lblNama.AutoSize = true;
+            this.lblNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNama.Location = new System.Drawing.Point(86, 73);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(136, 25);
+            this.lblNama.TabIndex = 6;
+            this.lblNama.Text = "Nama Anda :";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtNick
+            // 
+            this.txtNick.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtNick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNick.Location = new System.Drawing.Point(247, 73);
+            this.txtNick.MaxLength = 7;
+            this.txtNick.Name = "txtNick";
+            this.txtNick.Size = new System.Drawing.Size(355, 38);
+            this.txtNick.TabIndex = 7;
+            this.txtNick.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(244, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "- Masukkan nama Anda sebagai identitas.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(244, 375);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(188, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "- Tekan Enter atau Klik tombol Masuk.";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(322, 195);
-            this.Controls.Add(this.lblClock);
-            this.Controls.Add(this.lblCopyright);
+            this.ClientSize = new System.Drawing.Size(953, 443);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
@@ -171,7 +227,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -187,5 +242,10 @@
         private System.Windows.Forms.Timer timerClock;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.CheckBox ckShowTc;
+        private System.Windows.Forms.TextBox txtNick;
+        private System.Windows.Forms.Label lblNama;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

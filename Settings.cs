@@ -15,6 +15,10 @@ namespace BillingClientV3
             public static string ResourcePrefix = "/format/json";
             public static string UA = "QmlsbGluZ0NsaWVudFYz";
         }
+        public class ProcessMonitor
+        {
+            public const string ProcessOwner = "bbd33";
+        }
         public class Registry
         {
             class Keys

@@ -14,5 +14,6 @@ namespace BillingClientV3
         public DateTime ExpiredAt { get; set; }
         public string Text { get; set; }
         public string StationID { get; set; }
+        public string Nick { get; set; }
     }
 }

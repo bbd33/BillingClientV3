@@ -27,7 +27,7 @@ namespace BillingClientV3
         public class ProcessMonitor
         {
             public const string ProcessOwner = "bbd33";
-            public const string DontKillThisApp = "Idle,System,audiodg,csrss,devenv,BillingClientV3,BillingClientV3.vshost,svchost,winlogon,spoolv,wininit,smsss,services,lsm,lsass,sppsvc,dwm,conhost,taskhost,wudfhost,Dreamweaver,winbox,firefox,chrome,filezilla,explorer";
+            public const string DontKillThisApp = "Idle,System,audiodg,csrss,devenv,BillingClientV3,BillingClientV3.vshost,svchost,winlogon,spoolv,wininit,smsss,services,lsm,lsass,sppsvc,dwm,conhost,taskhost,wudfhost"; //Dreamweaver,winbox,firefox,chrome,filezilla,explorer
         }
         public class Registry
         {

@@ -48,6 +48,8 @@ namespace BillingClientV3
                 }
             }
             Process.GetProcesses().Where(p => processToDelete.Contains(p.ProcessName)).ToList().ForEach(y => y.Kill());
+            Process.Start("shutdown.exe", "/l /f");
+
         }
 
         public void AddProcess(ManagementObject mo)
